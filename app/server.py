@@ -158,7 +158,7 @@ def predict_append():
             im_cont = im_resize.filter(PIL.ImageFilter.CONTOUR)
             im_resize.save("new.jpg")
             m=open_image("new.jpg")
-            predictions.append(learn.predict(m)[0])
+            predictions.append(str(learn.predict(m)[0]))
 
 @app.route('/')
 async def homepage(request):
@@ -184,7 +184,11 @@ async def analyze(request):
             predict=predict+" /"
         else :
             predict=predict+" "+str(i)
-    predict = predict +" result "+str(eval(predict))
+    
+    try:
+        predict = predict + " result " + eval(predict)
+    except:
+        predict="Kindly Enter proper Equation"
     predictions.clear()
     return JSONResponse({'result': str(predict)})
 
