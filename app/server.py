@@ -180,7 +180,7 @@ async def analyze(request):
     for i in predictions:
         if i == "times":
             predict=predict+" *"
-        elif i == "div"
+        elif i == "div":
             predict=predict+" /"
         else :
             predict=predict+" "+str(i)
