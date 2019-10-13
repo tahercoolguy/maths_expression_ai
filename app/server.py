@@ -158,7 +158,7 @@ def predict_append():
             im_cont = im_resize.filter(PIL.ImageFilter.CONTOUR)
             im_resize.save("new.jpg")
             m=open_image("new.jpg")
-            predictions.append(learner.predict(m)[0])
+            predictions.append(learn.predict(m)[0])
 
 @app.route('/')
 async def homepage(request):
