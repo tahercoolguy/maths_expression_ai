@@ -210,7 +210,7 @@ async def analyze(request):
             predict=predict+" "+str(i)
     
     try:
-        predict = predict + " result " + eval(predict)
+        predict = predict + " result " + str(eval(predict))
     except:
         predict="Kindly Enter proper Equation"
     predictions.clear()
