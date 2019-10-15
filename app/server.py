@@ -203,11 +203,11 @@ async def analyze(request):
     predict=""
     for i in predictions:
         if i == "times":
-            predict=predict+" *"
+            predict=predict+"*"
         elif i == "div":
-            predict=predict+" /"
+            predict=predict+"/"
         else :
-            predict=predict+" "+str(i)
+            predict=predict+str(i)
     
     try:
         predict = predict + " result " + str(eval(predict))
