@@ -212,7 +212,7 @@ async def analyze(request):
     try:
         predict = predict + " result " + str(eval(predict))
     except:
-        predict="Kindly Enter proper Equation"
+        predict="Kindly Enter proper Equation "+predict
     predictions.clear()
     return JSONResponse({'result': str(predict)})
 
